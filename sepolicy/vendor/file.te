@@ -19,6 +19,10 @@ type vendor_sysfs_main_supply, fs_type, sysfs_type;
 
 # Performance
 type proc_sched_stune, fs_type, proc_type;
+type sysfs_mtk_cpufreq, fs_type, sysfs_type;More actions
+
+
+type sysfs_mtk_gpufreq, fs_type, sysfs_type;
 
 # GPU
 type vendor_sysfs_gpu, fs_type, sysfs_type;

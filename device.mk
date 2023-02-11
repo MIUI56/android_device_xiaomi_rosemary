@@ -515,5 +515,8 @@ PRODUCT_COPY_FILES += \
 #Sign
 -include vendor/infinity-priv/keys/keys.mk
 
+# Speed Profile
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/rosemary/rosemary-vendor.mk)

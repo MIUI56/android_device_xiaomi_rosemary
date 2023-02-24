@@ -197,6 +197,10 @@ PRODUCT_COPY_FILES += \
 # Init
 $(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):init_rosemary)
 
+PRODUCT_PACKAGES += \
+   android.hardware.media.c2@1.1.vendor \
+   android.hardware.media.c2@1.2.vendor
+   
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \

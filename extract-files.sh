@@ -63,6 +63,10 @@ function blob_fixup {
            "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v32.so" "${2}"
            "${PATCHELF}" --replace-needed "libssl.so" "libssl-v32.so" "${2}"           
             ;;
+        system/priv-app/ImsService/ImsService.apk)
+            [ "$2" = "" ] && return 0
+            apktool_patch "${2}" "${MY_DIR}/blob-patches/ImsService.patch" -r
+            ;;
         vendor/bin/hw/android.hardware.gnss-service.mediatek |\
         vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so)
             "$PATCHELF" --replace-needed "android.hardware.gnss-V1-ndk_platform.so" "android.hardware.gnss-V1-ndk.so" "$2"

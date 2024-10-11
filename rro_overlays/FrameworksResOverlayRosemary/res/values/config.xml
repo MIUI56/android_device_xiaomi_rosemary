@@ -505,4 +505,6 @@
         <item>910</item>  <!-- sensorLocationY -->
         <item>100</item>  <!-- sensorRadius -->
     </array>
+     
+    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/power_supply/bms/fastcharge_mode</string>
 </resources>

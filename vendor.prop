@@ -69,6 +69,7 @@ drm.service.enabled=true
 ro.netflix.bsp_rev=MTK6785-18758-1
 ro.vendor.mtk_widevine_drm_l1_support=1
 ro.vendor.mtk_sec_video_path_support=1
+vendor.perf.framepacing.enable=1
 
 # Game FrameRate
 debug.graphics.game_default_frame_rate.disabled=true

@@ -46,6 +46,9 @@ ro.iorapd.enable=false
 # Logging
 persist.sys.mdlog_dumpback=2
 
+# MIUI
+ro.miui.build.region=global
+
 # Perf
 ro.mtk_perf_simple_start_win=1
 ro.mtk_perf_fast_start_win=1

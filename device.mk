@@ -53,7 +53,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.bluetooth.audio-impl \
-    android.hardware.soundtrigger@2.3-impl
+    android.hardware.soundtrigger@2.3-impl \
+    android.hardware.audio.sounddose-vendor-impl
 
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
@@ -455,7 +456,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.mediatek
+    android.hardware.thermal-service.mediatek \
+    android.hardware.thermal@2.0.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
@@ -473,7 +475,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libutils-v32 \
     libcrypto-v32 \
-    libssl-v32
+    libssl-v32 \
+    libexpat.vendor \
+    libstagefright_foundation-v33
+    
+PRODUCT_PACKAGES += \
+    libunwindstack.vendor \
+    libutilscallstack.vendor \
+    libcurl.vendor 
 
 # Wi-Fi
 PRODUCT_PACKAGES += \

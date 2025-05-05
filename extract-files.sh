@@ -79,7 +79,7 @@ function blob_fixup {
             "$PATCHELF" --set-soname libwifi-hal-mtk.so "${2}"
             ;;
          system_ext/lib64/libsource.so)
-              grep -q libshim_ui.so "$2" || "$PATCHELF" --add-needed libshim_ui.so "$2"  
+              grep -q "libui_shim.so" "$2" || "$PATCHELF" --add-needed "libui_shim.so" "$2"  
                ;; 
         vendor/lib64/libmtkcam_featurepolicy.so)
             # evaluateCaptureConfiguration()

@@ -95,7 +95,9 @@ function blob_fixup {
             "$PATCHELF" --add-needed "libshim_sensors.so" "$2"
             ;;
         vendor/lib*/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
             ;;
         vendor/lib64/libgf_hal.so)
             sed -i 's/\xff\xc3\x01\xd1\xfd\x7b\x06\xa9/\x00\x00\x80\xd2\xc0\x03\x5f\xd6/g' "${2}"

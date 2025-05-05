@@ -145,6 +145,8 @@ persist.vendor.mtk.volte.enable=1
 persist.vendor.vilte_support=1
 persist.vendor.viwifi_support=1
 
+ro.vendor.qti.va_aosp.support=1 
+
 # LMK
 ro.lmk.swap_free_low_percentage=20
 ro.lmk.thrashing_limit=30

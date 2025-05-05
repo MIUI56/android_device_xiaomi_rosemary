@@ -5,6 +5,7 @@
 #
 
 DEVICE_PATH := device/xiaomi/rosemary
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 
 # A/B
 AB_OTA_UPDATER := true

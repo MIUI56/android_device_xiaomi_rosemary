@@ -485,7 +485,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libunwindstack.vendor \
     libutilscallstack.vendor \
-    libcurl.vendor 
+    libcurl.vendor \
+    libprocessgroup.vendor 
 
 # Wi-Fi
 PRODUCT_PACKAGES += \

@@ -54,7 +54,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.bluetooth.audio-impl \
     android.hardware.soundtrigger@2.3-impl \
-    android.hardware.audio.sounddose-vendor-impl
+    android.hardware.audio.sounddose-vendor-impl \
+    libaudioroute.vendor
 
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
@@ -169,6 +170,13 @@ PRODUCT_COPY_FILES += \
 # FM Radio
 PRODUCT_PACKAGES += \
     FMRadio
+
+PRODUCT_PACKAGES += \
+   liblz4.vendor \
+   libssl.vendor \
+   libjsoncpp.vendor \
+   libsqlite.vendor \
+   libpng.vendor
 
 # Gatekeeper
 PRODUCT_PACKAGES += \

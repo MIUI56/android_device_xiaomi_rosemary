@@ -233,7 +233,7 @@ PRODUCT_PACKAGES += \
     libshim_sink \
         libui_shim \
         libui_shim.vendor \
-        libbase_shim
+        libbase_shim 
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
@@ -303,8 +303,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     libchrome.vendor \
-    NfcNci \
-    SecureElement \
     Tag \
     android.hardware.nfc@1.0.vendor \
     android.hardware.nfc@1.1.vendor \

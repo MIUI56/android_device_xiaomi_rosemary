@@ -450,7 +450,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libshim_sensors \
-    libsensorndkbridge
+    libsensorndkbridge \
+    libpower.vendor
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30

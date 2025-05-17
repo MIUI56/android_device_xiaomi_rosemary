@@ -23,6 +23,10 @@
 
 # Power
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.begonia-libperfmgr                      u:object_r:hal_power_default_exec:s0
+/sys/devices/platform/maxim_ds28e16(/.*)?   u:object_r:sysfs_batt_verify:s0
 
 # Health
 /(vendor|system/vendor)/bin/hw/android\.hardware\.health-service\.mediatek                  u:object_r:hal_health_default_exec:s0
+
+# Ged
+/proc/ged       u:object_r:proc_ged:s0

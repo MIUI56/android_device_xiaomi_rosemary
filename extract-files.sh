@@ -106,8 +106,7 @@ function blob_fixup {
             sed -i 's/\xff\x43\x01\xd1\xfd\x7b\x02\xa9/\xc0\x03\x5f\xd6\xfd\x7b\x02\xa9/g' "${2}"
             ;;
         vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron)
-            [ "$2" = "" ] && return 0
-            grep -q "libbase_shim.so" "${2}" || "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
+            "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
             ;;
         vendor/lib/libnvram.so|\
         vendor/lib64/libnvram.so|\

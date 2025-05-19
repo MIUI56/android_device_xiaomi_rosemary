@@ -4,7 +4,6 @@ type vendor_fingerprint_data_file, file_type, data_file_type;
 
 # Latency
 type latency_device, dev_type;
-
 # Last kernel
 type proc_last_kmsg, fs_type, proc_type;
 

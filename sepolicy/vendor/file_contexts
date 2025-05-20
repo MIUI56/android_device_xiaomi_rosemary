@@ -1,32 +1,40 @@
+# Audio
+/data/vendor/cirrus(/.*)?										u:object_r:mtk_audiohal_data_file:s0
+/mnt/vendor/persist/audio(/.*)? 									u:object_r:mtk_audiohal_data_file:s0
+
+# Batterysecret
+/(vendor|system/vendor)/bin/batterysecret 								u:object_r:batterysecret_exec:s0
+
+# Camera
+/mnt/vendor/persist/camera(/.*)?                                                                        u:object_r:persist_camera_data_file:s0
+
 # Fingerprint
-/mnt/vendor/persist/goodix(/.*)? u:object_r:vendor_fingerprint_data_file:s0
-/mnt/vendor/persist/fpc(/.*)?    u:object_r:vendor_fingerprint_data_file:s0
-/data/vendor/fpdump(/.*)?        u:object_r:vendor_fingerprint_data_file:s0
-/data/vendor/goodix(/.*)?        u:object_r:vendor_fingerprint_data_file:s0
-/data/vendor/fpc(/.*)?           u:object_r:vendor_fingerprint_data_file:s0
-/data/gf_data(/.*)?              u:object_r:fingerprint_data_file:s0
-/dev/goodix_fp                   u:object_r:fingerprint_device:s0
+/mnt/vendor/persist/goodix(/.*)? 									u:object_r:vendor_fingerprint_data_file:s0
+/mnt/vendor/persist/fpc(/.*)?    									u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/fpdump(/.*)?        									u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/goodix(/.*)?        									u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/fpc(/.*)?           									u:object_r:vendor_fingerprint_data_file:s0
+/data/gf_data(/.*)?              									u:object_r:fingerprint_data_file:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2.3-service\.xiaomi                           u:object_r:hal_fingerprint_default_exec:s0
 
-# FPS Info
-/sys/module/primary_display/parameters/display_framerate_main      u:object_r:sysfs_fpsinfo:s0
+# IR
+/dev/spidev3.0                                  							u:object_r:spidev_device:s0
 
-# Hals
-/vendor/bin/hw/mfp-daemon                                               u:object_r:hal_fingerprint_default_exec:s0
-/vendor/bin/hw/vendor\.xiaomi\.hardware\.displayfeature@1\.0-service    u:object_r:hal_displayfeature_default_exec:s0
+# Lights
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.rosemary                          	u:object_r:hal_light_default_exec:s0
 
-# Latency
-/dev/cpu_dma_latency                                                                                    u:object_r:latency_device:s0
+# Sensors
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@2\.1-service\.rosemary-multihal 		u:object_r:hal_sensors_default_exec:s0
+/dev/elliptic[0-1] 											u:object_r:sensor_device:s0
 
-# Mi Thermald
-/vendor/bin/mi_thermald       u:object_r:mi_thermald_exec:s0
-/data/vendor/thermal(/.*)?    u:object_r:thermal_data_file:s0
+# Thermals
+/vendor/bin/mi_thermald       										u:object_r:mi_thermald_exec:s0
 
-# Power
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.begonia-libperfmgr                      u:object_r:hal_power_default_exec:s0
-/sys/devices/platform/maxim_ds28e16(/.*)?   u:object_r:sysfs_batt_verify:s0
+# USB
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb\.gadget-service\.rosemary                        u:object_r:mtk_hal_usb_exec:s0
 
-# Health
-/(vendor|system/vendor)/bin/hw/android\.hardware\.health-service\.mediatek                  u:object_r:hal_health_default_exec:s0
+# Vibrator
+/vendor/bin/hw/android\.hardware\.vibrator-service\.rosemary					        u:object_r:hal_vibrator_default_exec:s0
 
-# Ged
-/proc/ged       u:object_r:proc_ged:s0
+# WiFi
+/(vendor|system/vendor)/bin/hw/android\.hardware\.wifi@[0-9]\.[0-9]-service-lazy\.rosemary 		u:object_r:hal_wifi_default_exec:s0

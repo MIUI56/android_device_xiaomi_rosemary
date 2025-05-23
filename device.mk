@@ -290,6 +290,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libstagefright_foundation-v33
 
+# SOONG_CONFIG
+$(call soong_config_set,libinit,vendor_init_lib,//$(DEVICE_PATH):init_rosemary)
+
 # Neural Networks
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor:64

@@ -82,7 +82,6 @@ ODM_MANIFEST_SKUS += nfc
 ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/manifest_nfc.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_rosemary
 TARGET_RECOVERY_DEVICE_MODULES := init_rosemary
 
 # Kernel

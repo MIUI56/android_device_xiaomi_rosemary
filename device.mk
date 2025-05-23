@@ -291,8 +291,9 @@ PRODUCT_PACKAGES += \
     libstagefright_foundation-v33
 
 # SOONG_CONFIG
-$(call soong_config_set,libinit,vendor_init_lib,//$(DEVICE_PATH):init_rosemary)
+$(call soong_config_set,libinit,vendor_init_lib, //$(DEVICE_PATH):init_rosemary)
 $(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
+$(call soong_config_set,power_libperfmgr,mode_extension_lib, //$(DEVICE_PATH):libperfmgr-ext-xiaomi)
 
 # Neural Networks
 PRODUCT_PACKAGES += \

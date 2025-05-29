@@ -295,9 +295,6 @@ $(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):init_rosemary)
 $(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
 $(call soong_config_set,power_libperfmgr,mode_extension_lib,//$(LOCAL_PATH):libperfmgr-ext-xiaomi)
 
-# Neural Networks
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3.vendor:64
 
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
@@ -351,7 +348,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-   android.hardware.power-service.lineage-libperfmgr \
+   android.hardware.power-service-mediatek \
    vendor.mediatek.hardware.mtkpower@1.2-service.stub \
    libmtkperf_client_vendor \
    libmtkperf_client
@@ -463,17 +460,16 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/mediatek \
     hardware/xiaomi \
-    hardware/mediatek/libmtkperf_client \
-    hardware/lineage/interfaces/power-libperfmgr
+    hardware/mediatek/libmtkperf_client 
     
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.mediatek \
-    android.hardware.thermal@2.0.vendor
+    android.hardware.thermal-service.mediatek 
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
+    
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek \

@@ -74,3 +74,9 @@ wifi.direct.interface=p2p0
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=1440
 ro.zram.periodic_wb_delay_hours=24
+
+# Device 
+ro.infinity.soc=MTK_Helio_G95
+ro.infinity.battery=5000 mah
+ro.infinity.display=1080 x 2400 
+ro.infinity.camera=64,8,2,2/13

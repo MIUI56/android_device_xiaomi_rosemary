@@ -26,6 +26,10 @@ persist.vendor.dc_backlight.enable=false
 ro.display.type=oled
 vendor.hbm.enable=true
 
+# LMKD
+ro.config.low_ram=falseMore actions
+ro.lmk.log_stats=true
+
 # Fingerprint
 ro.hardware.fp.sideCap=true
 

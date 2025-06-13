@@ -33,6 +33,9 @@
 # Xiaomi_touch
 /dev/xiaomi-touch u:object_r:vendor_touchfeature_device:s0
 
+# Latency
+/dev/cpu_dma_latency                                            u:object_r:latency_device:s0
+
 # USB
 /(vendor|system/vendor)/bin/hw/android\.hardware\.usb\.gadget-service\.rosemary                        u:object_r:mtk_hal_usb_exec:s0
 

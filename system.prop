@@ -27,7 +27,7 @@ ro.display.type=oled
 vendor.hbm.enable=true
 
 # LMKD
-ro.config.low_ram=falseMore actions
+ro.config.low_ram=false
 ro.lmk.log_stats=true
 
 # Fingerprint

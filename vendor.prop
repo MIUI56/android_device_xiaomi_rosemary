@@ -287,7 +287,7 @@ ro.vendor.connsys.dedicated.log.port=bt,wifi,gps,mcu
 # Zygote
 zygote.critical_window.minute=10
 
-# Low Memory KillerMore actions
+# Low Memory Killer
 ro.lmk.downgrade_pressure=60
 ro.lmk.kill_timeout_ms=100
 ro.lmk.psi_complete_stall_ms=150
@@ -297,10 +297,6 @@ ro.lmk.thrashing_limit=30
 ro.lmk.thrashing_limit_decay=50
 
 
-# FingerprintMore actions
-
-
+# Fingerprint
 persist.vendor.fingerprint.type=side
-
-
 persist.vendor.fingerprint.sensor_location=1080|910|100

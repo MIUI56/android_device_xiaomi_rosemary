@@ -289,7 +289,6 @@ PRODUCT_PACKAGES += \
 # SOONG_CONFIG
 $(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):init_rosemary)
 $(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
-$(call soong_config_set,power_libperfmgr,mode_extension_lib,//$(LOCAL_PATH):libperfmgr-ext-xiaomi)
 
 
 PRODUCT_PACKAGES += \

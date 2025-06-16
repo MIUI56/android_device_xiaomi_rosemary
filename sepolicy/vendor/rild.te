@@ -1,0 +1,5 @@
+# Allow rild to read default_prop files
+
+allow rild metadata_file:dir { search open read };
+
+

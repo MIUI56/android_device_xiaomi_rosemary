@@ -28,5 +28,6 @@ type sysfs_mtk_gpufreq, fs_type, sysfs_type;
 type latency_device, dev_type;
 
 
+
 # Touchpanel
 type sysfs_touchpanel, sysfs_type, fs_type;

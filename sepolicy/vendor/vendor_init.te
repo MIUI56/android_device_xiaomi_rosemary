@@ -9,3 +9,10 @@ allow vendor_init nfc_data_vendor_file:dir { r_dir_perms create_dir_perms };
 allow vendor_init proc_sched_stune:file w_file_perms;
 
 rw_dir_file(vendor_init, sysfs_leds)
+
+# Allow vendor_init to set camera-related vendor properties
+set_prop(vendor_init, vendor_camera_prop)
+
+set_prop(vendor_init, vendor_oem_prop)
+set_prop(vendor_init, vendor_fingerprint_prop)
+

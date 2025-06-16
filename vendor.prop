@@ -74,7 +74,7 @@ ro.vendor.mtk_sec_video_path_support=1
 debug.graphics.game_default_frame_rate.disabled=true
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
-
+ro.vendor.perf.scroll_opt=true
 
 # Data
 ro.vendor.mtk_f2fs_enable=1

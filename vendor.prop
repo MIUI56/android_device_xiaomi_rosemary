@@ -72,6 +72,8 @@ ro.vendor.mtk_sec_video_path_support=1
 
 # Game FrameRate
 debug.graphics.game_default_frame_rate.disabled=true
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=30
 
 
 # Data

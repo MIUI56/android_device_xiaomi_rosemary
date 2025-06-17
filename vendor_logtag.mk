@@ -6,6 +6,7 @@ endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.log.tag.RILMUXD=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.HWUI=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.AT=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.RILC-MTK=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.RILC=$(VENDOR_LOG_LEVEL) \

@@ -35,6 +35,7 @@ TARGET_INCLUDES_LOS_PREBUILTS := true
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
+<<<<<<< HEAD
     BuildDesc="rosemary-user 12 SP1A.210812.016 V14.0.7.0.TKLMIXM release-keys"
 
 BUILD_FINGERPRINT := "Redmi/rosemary_global/rosemary:12/SP1A.210812.016/V14.0.7.0.TKLMIXM:user/release-keys"
@@ -43,3 +44,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
     
 
+=======
+    BuildDesc="rosemary-user 12 SP1A.210812.016 V14.0.11.0.TKLMIXM release-keys" \
+    BuildFingerprint=Redmi/rosemary_global/rosemary:12/SP1A.210812.016/V14.0.11.0.TKLMIXM:user/release-keys \
+    SystemModel=$(PRODUCT_SYSTEM_DEVICE) \
+    SystemName=$(PRODUCT_SYSTEM_NAME) \
+    ProductModel=$(PRODUCT_SYSTEM_DEVICE) \
+    DeviceProduct=$(PRODUCT_SYSTEM_NAME)
+>>>>>>> 02f98c2 (rosemary: Update blobs from `V14.0.11.0.TKLMIXM`)

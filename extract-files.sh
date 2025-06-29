@@ -117,7 +117,7 @@ function blob_fixup {
         system_ext/lib64/libsink-mtk.so)
             "${PATCHELF}" --add-needed "libshim_sink.so" "$2"
             ;;
-        system/lib/libimsma.so)
+        system_ext/lib64/libimsma.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libsink.so" "libsink-mtk.so" "${2}"
             ;;

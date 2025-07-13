@@ -11,23 +11,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device makefile.
 $(call inherit-product, device/xiaomi/rosemary/device.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common PixelOS stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := lineage_rosemary
+PRODUCT_NAME := aosp_rosemary
 PRODUCT_DEVICE := rosemary
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := M2101K7BNY
 
-#ngising os
-RISING_MAINTAINER="probaero"
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-WITH_GMS := true
-TARGET_INCLUDE_GOOGLE_DIALER := true
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    RisingMaintainer="probaero" \
-    RisingChipset="Helio G95" \
     BuildDesc="rosemary-user 12 SP1A.210812.016 V14.0.11.0.TKLMIXM release-keys" \
     BuildFingerprint=Redmi/rosemary_global/rosemary:12/SP1A.210812.016/V14.0.11.0.TKLMIXM:user/release-keys \
     SystemModel=$(PRODUCT_SYSTEM_DEVICE) \

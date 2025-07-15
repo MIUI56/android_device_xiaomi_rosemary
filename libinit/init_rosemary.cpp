@@ -60,11 +60,7 @@ static const variant_info_t secret_info = {
     .device = "secret",
     .marketname = "Redmi Note 10S",
     .model = "M2101K7BG",
-<<<<<<< HEAD
-    .build_fingerprint = "Redmi/secret_in/secret:12/SP1A.210812.016/V14.0.11.0.TKLINXM:user/release-keys",
-=======
     .build_fingerprint = "Redmi/secret_global/secret:12/SP1A.210812.016/V14.0.11.0.TKLMIXM:user/release-keys",
->>>>>>> 02f98c2 (rosemary: Update blobs from `V14.0.11.0.TKLMIXM`)
 
     .nfc = false,
 };

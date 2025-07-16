@@ -70,3 +70,6 @@ genfscon sysfs /devices/platform/usb0/wakeup 											                        
 
 # CPU
 genfscon sysfs /devices/system/cpu/cpufreq/policy(0|6)/scaling_(min|max)_freq                                                          u:object_r:sysfs_mtk_cpufreq:s0
+
+# PD Adapter
+genfscon sysfs /devices/platform/pd_adapter/Charging_Adapter/pd_adapter                                       u:object_r:vendor_sysfs_pd_adapter:s0   

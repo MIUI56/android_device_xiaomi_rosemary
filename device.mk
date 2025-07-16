@@ -232,7 +232,8 @@ PRODUCT_PACKAGES += \
     libshim_sink \
         libui_shim \
         libui_shim.vendor \
-        libbase_shim 
+        libbase_shim \
+        libaudioclient_shim
         
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.ims.xml

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 The infinityOS Project
+# Copyright (C) 2022 The yaapOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -11,23 +11,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device makefile.
 $(call inherit-product, device/xiaomi/rosemary/device.mk)
 
-# Inherit some common infinityOS stuff.
-$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
+# Inherit some common yaapOS stuff.
+$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
 
-PRODUCT_NAME := infinity_rosemary
+PRODUCT_NAME := yaap_rosemary
 PRODUCT_DEVICE := rosemary
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := M2101K7BNY
 
-# Infinity-X Flags
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_SUPPORTS_BLUR := true
-INFINITY_MAINTAINER := "Aj0195"
-USE_MOTO_CALCULATOR := true
-WITH_GAPPS := true
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_SHIPS_GOOGLE_DIALER := true
+# yaap-X Flags
+scr_resolution := 1080
 TARGET_DISABLE_EPPE := true
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi

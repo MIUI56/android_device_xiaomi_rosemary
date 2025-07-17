@@ -33,13 +33,12 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     ('vendor.mediatek.hardware.videotelephony@1.0',): lib_fixup_vendor_suffix,
-    ('libsink',): lib_fixup_remove,
 }
 
 blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libsource.so': blob_fixup()
         .add_needed('libui_shim.so'),
-    'system_ext/lib64/libsink.so': blob_fixup()
+    'system_ext/lib64/libsink-mtk.so': blob_fixup()
         .replace_needed('libsensorndkbridge.so', 'android.hardware.sensors@1.0-convert-shared.so')
         .add_needed('libaudioclient_shim.so'),
     'system/priv-app/ImsService/ImsService.apk': blob_fixup()
@@ -74,7 +73,9 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hw/hwcomposer.mt6785.so' : blob_fixup()
          .add_needed('libprocessgroup_shim.so'),
     'vendor/lib64/libgoodixhwfingerprint.so': blob_fixup()
-        .replace_needed('libvendor.goodix.hardware.biometrics.fingerprint@2.1.so', 'vendor.goodix.hardware.biometrics.fingerprint@2.1.so')
+        .replace_needed('libvendor.goodix.hardware.biometrics.fingerprint@2.1.so', 'vendor.goodix.hardware.biometrics.fingerprint@2.1.so'),
+    'system_ext/lib64/libimsma.so': blob_fixup()
+        .replace_needed('libsink.so', 'libsink-mtk.so')
 }  # fmt: skip
 
 module = ExtractUtilsModule(

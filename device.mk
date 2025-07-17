@@ -232,8 +232,8 @@ PRODUCT_PACKAGES += \
     libshim_sink \
         libui_shim \
         libui_shim.vendor \
-        libbase_shim \
-        libaudioclient_shim
+        libbase_shim 
+        
         
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
@@ -473,7 +473,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
-    
+# Neutral Networks
+PRODUCT_PACKAGES += \
+   android.hardware.neuralnetworks@1.3.vendor:64
+   
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek \

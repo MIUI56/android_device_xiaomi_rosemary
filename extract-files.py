@@ -75,7 +75,9 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libgoodixhwfingerprint.so': blob_fixup()
         .replace_needed('libvendor.goodix.hardware.biometrics.fingerprint@2.1.so', 'vendor.goodix.hardware.biometrics.fingerprint@2.1.so'),
     'system_ext/lib64/libimsma.so': blob_fixup()
-        .replace_needed('libsink.so', 'libsink-mtk.so')
+        .replace_needed('libsink.so', 'libsink-mtk.so'),
+    'vendor/bin/hw/mtkfusionrild' : blob_fixup()
+         .add_needed('libutils-v32.so')
 }  # fmt: skip
 
 module = ExtractUtilsModule(

@@ -1,5 +1,6 @@
 # Allow rild to read default_prop files
 
 allow rild metadata_file:dir { search open read };
+allow rild vendor_mtk_call_drop_prop:file {read open };
 
 

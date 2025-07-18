@@ -17,6 +17,10 @@ if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ANDROID_ROOT="${MY_DIR}/../../.."
 
+# If XML files don't have comments before the XML header, use this flag
+# Can still be used with broken XML files by using blob_fixup
+export TARGET_DISABLE_XML_FIXING=true
+
 HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
@@ -60,43 +64,51 @@ fi
 function blob_fixup {
     case "$1" in
         vendor/bin/mtk_agpsd)
+            [ "$2" = "" ] && return 0        
            "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v32.so" "${2}"
            "${PATCHELF}" --replace-needed "libssl.so" "libssl-v32.so" "${2}"           
             ;;
         system/priv-app/ImsService/ImsService.apk)
             [ "$2" = "" ] && return 0
             apktool_patch "${2}" "${MY_DIR}/blob-patches/ImsService.patch" -r
-            ;;
+            ;;    
         vendor/bin/hw/android.hardware.gnss-service.mediatek |\
         vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so)
+            [ "$2" = "" ] && return 0        
             "$PATCHELF" --replace-needed "android.hardware.gnss-V1-ndk_platform.so" "android.hardware.gnss-V1-ndk.so" "$2"
             ;;
         vendor/bin/hw/android.hardware.media.c2@1.2-mediatek)
             ;&
         vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
+            [ "$2" = "" ] && return 0        
             "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             ;;
         vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "android.hardware.power-V2-ndk_platform.so" "android.hardware.power-V2-ndk.so" "${2}"
             ;;
         vendor/lib64/libwifi-hal-mtk.so)
+            [ "$2" = "" ] && return 0        
             "$PATCHELF" --set-soname libwifi-hal-mtk.so "${2}"
             ;;
          system_ext/lib64/libsource.so)
               grep -q "libui_shim.so" "$2" || "$PATCHELF" --add-needed "libui_shim.so" "$2"  
                ;; 
         vendor/lib64/libmtkcam_featurepolicy.so)
+            [ "$2" = "" ] && return 0        
             # evaluateCaptureConfiguration()
             sed -i "s/\x34\xE8\x87\x40\xB9/\x34\x28\x02\x80\x52/" "$2"
             ;;
         vendor/lib64/libmtkcam_stdutils.so|\
         vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so)
+            [ "$2" = "" ] && return 0        
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
             ;;
         vendor/bin/mnld|\
         vendor/lib*/libaalservice.so|\
         vendor/lib*/libcam.utils.sensorprovider.so|\
         vendor/lib*/librgbwlightsensor.so)
+            [ "$2" = "" ] && return 0        
             "$PATCHELF" --add-needed "libshim_sensors.so" "$2"
             ;;
         vendor/lib*/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
@@ -105,9 +117,11 @@ function blob_fixup {
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
             ;;
         vendor/lib64/libgf_hal.so)
+            [ "$2" = "" ] && return 0        
             sed -i 's/\xff\xc3\x01\xd1\xfd\x7b\x06\xa9/\x00\x00\x80\xd2\xc0\x03\x5f\xd6/g' "${2}"
             ;;
         vendor/lib64/hw/fingerprint.fpc.default.so)
+            [ "$2" = "" ] && return 0        
             sed -i 's/\xff\x43\x01\xd1\xfd\x7b\x02\xa9/\xc0\x03\x5f\xd6\xfd\x7b\x02\xa9/g' "${2}"
             ;;
         vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron)
@@ -131,6 +145,12 @@ function blob_fixup {
             "${PATCHELF}" --add-needed "libutils-v32.so" "${2}"
             ;;        
     esac
+
+    return 0
+}
+
+function blob_fixup_dry() {
+    blob_fixup "$1" ""
 }
 
 # Initialize the helper

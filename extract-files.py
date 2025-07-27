@@ -22,7 +22,8 @@ namespace_imports = [
     'hardware/mediatek',
     'hardware/mediatek/libmtkperf_client',
     'hardware/xiaomi',
-    'vendor/xiaomi/rosemary'
+    'vendor/xiaomi/rosemary',
+    'device/xiaomi/rosemary'
 ]
 
 

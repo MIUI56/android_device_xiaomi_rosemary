@@ -22,7 +22,6 @@ AB_OTA_PARTITIONS := \
     vbmeta_vendor
 
 BUILD_BROKEN_DUP_RULES := true
-BUILD_BROKEN_PREBUILT_ELF_FILES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # APEX
@@ -41,6 +40,15 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
+
+# Enable 64-bit for non-zygote.
+ZYGOTE_FORCE_64 := true
+
+# Include 64-bit mediaserver to support 64-bit only devices
+TARGET_DYNAMIC_64_32_MEDIASERVER := true
+
+# Include 64-bit drmserver to support 64-bit only devices
+TARGET_DYNAMIC_64_32_DRMSERVER := true
 
 # Bootloader
 BOARD_VENDOR := xiaomi
@@ -97,7 +105,6 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_CUSTOM_DTBOIMG_MK := $(DEVICE_PATH)/dtbo/dtbo.mk
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 
-
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := rosemary,rosemary_p,secret,secretr,maltose
 
@@ -117,9 +124,6 @@ BOARD_MAIN_PARTITION_LIST := \
     product \
     vendor
 
-# Reserve space for gapps install
--include vendor/infinity/config/BoardConfigReservedSize.mk
-
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -136,6 +140,8 @@ BOARD_USES_METADATA_PARTITION := true
 TARGET_BOARD_PLATFORM := mt6785
 BOARD_HAS_MTK_HARDWARE := true
 
+# Power
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -145,10 +151,6 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6785
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-
-# Power
-TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
-
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
@@ -160,7 +162,7 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 
 # SPL
-VENDOR_SECURITY_PATCH := 2024-07-01
+VENDOR_SECURITY_PATCH := 2024-12-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -190,7 +192,7 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE += $(DEVICE_PATH)/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/framework_compatibility_matrix.xml \
-    vendor/infinity/config/device_framework_matrix.xml
+    vendor/lineage/config/device_framework_matrix.xml
 
 # Wi-Fi
 WPA_SUPPLICANT_VERSION := VER_0_8_X

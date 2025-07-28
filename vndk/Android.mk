@@ -25,4 +25,3 @@ LOCAL_CHECK_ELF_FILES := false
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
-

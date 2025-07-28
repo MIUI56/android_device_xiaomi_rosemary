@@ -6,8 +6,6 @@ endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.log.tag.RILMUXD=$(VENDOR_LOG_LEVEL) \
-    persist.log.tag.HWUI=$(VENDOR_LOG_LEVEL) \
-    persist.log.tag.hwcomposer=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.AT=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.RILC-MTK=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.RILC=$(VENDOR_LOG_LEVEL) \
@@ -131,6 +129,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.log.tag.OperatorUtils=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.WfoApp=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.GsmCdmaConn=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.hwcomposer=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.HWUI=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.Phone=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.RIL-CC=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.RpCallControl=$(VENDOR_LOG_LEVEL) \

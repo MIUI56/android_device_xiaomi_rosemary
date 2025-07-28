@@ -71,12 +71,6 @@ ro.vendor.mtk_widevine_drm_l1_support=1
 ro.vendor.mtk_sec_video_path_support=1
 vendor.perf.framepacing.enable=1
 
-# Game FrameRate
-debug.graphics.game_default_frame_rate.disabled=true
-debug.hwui.use_hint_manager=true
-debug.hwui.target_cpu_time_percent=30
-ro.vendor.perf.scroll_opt=true
-
 # Data
 ro.vendor.mtk_f2fs_enable=1
 ro.vendor.mtk_fd_support=1
@@ -88,6 +82,7 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 persist.sys.mcd_config_file=/system/etc/mcd_default.conf
 ro.opengles.version=196610
 ro.hardware.egl=meow
+ro.vendor.mtk_backlight_hwc_support=0
 ro.vendor.composer_version=2.2
 ro.vendor.mtk_dre30_support=1
 ro.vendor.mtk_pq_color_mode=1
@@ -95,6 +90,7 @@ ro.vendor.mtk_prefer_64bit_proc=0
 ro.vendor.mtk_dre30_support=1
 ro.vendor.mtk_pq_support=2
 ro.vendor.pq.mtk_pq_video_whitelist_support=0
+ro.vendor.pq.mtk_mdp_lite_pq_support=0
 ro.vendor.pq.mtk_video_transition=0
 ro.vendor.pq.mtk_scltm_support=1
 ro.vendor.mml.mtk_mml_support=0
@@ -152,8 +148,6 @@ persist.vendor.mtk.volte.enable=1
 persist.vendor.vilte_support=1
 persist.vendor.viwifi_support=1
 
-ro.vendor.qti.va_aosp.support=1 
-
 # LMK
 ro.lmk.swap_free_low_percentage=20
 ro.lmk.thrashing_limit=30
@@ -162,10 +156,18 @@ ro.lmk.swap_util_max=90
 ro.lmk.kill_timeout_ms=100
 ro.lmk.downgrade_pressure=60
 
+# Game FrameRate
+debug.graphics.game_default_frame_rate.disabled=true
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=30
+ro.vendor.perf.scroll_opt=true
+
+
 # MIUI
 persist.miui.extm.enable=1
 
 # Media
+debug.stagefright.c2inputsurface=-1
 media.stagefright.thumbnail.prefer_hw_codecs=true
 media.c2.dmabuf.padding=3072
 ro.vendor.mtk_config_max_dram_size=0x800000000
@@ -178,8 +180,8 @@ ro.vendor.pref_scale_enable_cfg=1
 ro.vendor.mtk_hdr_video_support=1
 
 # MediaTek
-ro.vendor.mediatek.version.branch=alps-mp-s0.mp1.tc8sp-mt6785
-ro.vendor.mediatek.version.release=alps-mp-s0.mp1.tc8sp-mt6785-V1.12_xiaomi.s0mp1.k85v1.64_P11
+ro.vendor.mediatek.version.branch=alps-mp-s0.mp1.tc8sp-cs2
+ro.vendor.mediatek.version.release=alps-mp-s0.mp1.tc8sp-cs2-V1.31
 ro.vendor.mediatek.platform=MT6785
 persist.vendor.factory.GB2312=yes
 ro.vendor.mtk.sensor.support=yes
@@ -264,7 +266,6 @@ debug.sf.earlyGl.app.duration=24000000
 debug.sf.hwc.min.duration=23000000
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_transaction_tracing=false
-debug.sf.enable_gl_backpressure=0
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.enable_hwc_vds=0
 
@@ -295,13 +296,11 @@ ro.vendor.connsys.dedicated.log.port=bt,wifi,gps,mcu
 # Zygote
 zygote.critical_window.minute=10
 
-
-
-
-# FingerprintMore actions
-
-
+# Fingerprint
 persist.vendor.fingerprint.type=side
+persist.vendor.fingerprint.sensor_location=1080|910|100|local:0
 
-
-persist.vendor.fingerprint.sensor_location=1080|910|100
+# HWUI
+debug.hwui.use_hint_manager=true
+debug.sf.enable_adpf_cpu_hint=true
+debug.hwui.target_cpu_time_percent=30

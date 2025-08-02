@@ -1,2 +1,4 @@
 type spidev_device, dev_type;
+
+# Power
 type vendor_touchfeature_device, dev_type;

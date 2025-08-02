@@ -1,6 +1,6 @@
 # Camera
 type persist_camera_data_file, data_file_type, file_type;
-type vendor_camera_data_file, data_file_type, file_type;
+
 # Fingerprint
 type fingerprint_data_file, core_data_file_type, data_file_type, file_type;
 type vendor_fingerprint_data_file, data_file_type, file_type;
@@ -21,13 +21,12 @@ type vendor_sysfs_main_supply, fs_type, sysfs_type;
 type proc_sched_stune, fs_type, proc_type;
 type sysfs_mtk_cpufreq, fs_type, sysfs_type;
 
-
+# GPU
+type vendor_sysfs_gpu, fs_type, sysfs_type;
 type sysfs_mtk_gpufreq, fs_type, sysfs_type;
-
-# Latency
-type latency_device, dev_type;
-
-
 
 # Touchpanel
 type sysfs_touchpanel, sysfs_type, fs_type;
+
+# PD Adapter
+type vendor_sysfs_pd_adapter, sysfs_type, fs_type;

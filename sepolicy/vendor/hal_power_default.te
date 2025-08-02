@@ -7,10 +7,10 @@ allow hal_power_default sysfs_fpsgo:file rw_file_perms;
 allow hal_power_default sysfs_gpu:dir search;
 allow hal_power_default sysfs_gpu:file rw_file_perms;
 allow hal_power_default sysfs_gpu:dir r_dir_perms;
-allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
 allow hal_power_default cgroup:file r_file_perms;
 
 # Set CPU frequency
+allow hal_power_default sysfs_mtk_cpufreq:dir r_dir_perms;
 allow hal_power_default sysfs_mtk_cpufreq:file rw_file_perms;
 
 # Set GPU frequency

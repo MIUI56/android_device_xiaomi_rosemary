@@ -1,4 +1,2 @@
-vendor_restricted_prop(vendor_fingerprint_prop);
 vendor_restricted_prop(vendor_camera_prop);
-type vendor_oem_prop, property_type, vendor_property_type;
-
+vendor_restricted_prop(vendor_fingerprint_prop);

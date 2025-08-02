@@ -357,6 +357,9 @@ PRODUCT_PACKAGES += \
 # VNDK
 PRODUCT_PACKAGES += \
     libsqlite.vendor
+
+#Sign
+-include vendor/infinity-priv/keys/keys.mk
     
 # Wi-Fi
 PRODUCT_PACKAGES += \

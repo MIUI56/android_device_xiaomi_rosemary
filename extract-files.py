@@ -57,6 +57,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libalsautils.so', 'libalsautils-v31.so'),
     ('vendor/lib64/libmtkcam_stdutils.so', 'vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so'): blob_fixup()
         .replace_needed('libutils.so', 'libutils-v32.so'),
+    'vendor/lib64/libmtkcam_grallocutils.so' : blob_fixup()
+        .replace_needed('libui.so', 'libui-v34.so'),
     ('vendor/bin/mnld', 'vendor/lib64/libaalservice.so', 'vendor/lib64/libcam.utils.sensorprovider.so', 'vendor/lib64/librgbwlightsensor.so'): blob_fixup()
         .replace_needed('libsensorndkbridge.so', 'android.hardware.sensors@1.0-convert-shared.so'),
     'vendor/lib64/hw/vendor.mediatek.hardware.pq@2.15-impl.so': blob_fixup()
